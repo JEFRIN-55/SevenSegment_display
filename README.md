@@ -22,10 +22,66 @@ Close the Simulation Once done, by going to Simulation → "Close Simulation
 
 Input/Output Signal Diagram:
 
+
+
 RTL Code:
+```
+module sevenSegment(bcd, seg);
+input [3:0] bcd;
+output reg [6:0] seg;
+always @(bcd)
+begin 
+case(bcd)
+
+4'b0:seg = 7'b0111111;
+4'b0001:seg = 7'b0001010;
+4'b0010:seg = 7'b1110011;
+4'b0011:seg = 7'b1011011;
+4'b0100:seg = 7'b1001110;
+4'b0101:seg = 7'b1011101;
+4'b0110:seg = 7'b1111101;
+4'b0111:seg = 7'b0001011;
+4'b1000:seg = 7'b1111111;
+4'b1001:seg = 7'b1011111;
+4'b1001:seg = 7'b0;
+endcase
+```
 
 TestBench:
+```
+module sevenSegment_tb;
+reg [3:0] bcd_t;
+wire [6:0] seg_t;
+sevenSegment dut(.bcd(bcd_t),.seg(seg_t));
+initial
+begin
+bcd_t = 4'b0;
+#100
+bcd_t = 4'b0001;
+#100
+bcd_t = 4'b0010;
+#100
+bcd_t = 4'b0011;
+#100
+bcd_t = 4'b0100;
+#100
+bcd_t = 4'b0101;
+#100
+bcd_t = 4'b0110;
+#100
+bcd_t = 4'b0111;
+#100
+bcd_t = 4'b1000;
+#100
+bcd_t = 4'b1001;
+end
+endmodule
+```
 
 Output waveform:
+<img width="1916" height="1072" alt="image" src="https://github.com/user-attachments/assets/7f0fa1ad-28fb-4727-ba1d-af35d656ecb8" />
+
+
+
 
 Conclusion:

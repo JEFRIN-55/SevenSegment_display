@@ -21,6 +21,8 @@ Save and Document Results Save your project by clicking File → Save Project. T
 Close the Simulation Once done, by going to Simulation → "Close Simulation
 
 Input/Output Signal Diagram:
+<img width="1919" height="1068" alt="image" src="https://github.com/user-attachments/assets/688f8792-ee40-46ba-9db4-3e518365e742" />
+
 
 
 
@@ -85,3 +87,4 @@ Output waveform:
 
 
 Conclusion:
+In this experiment, a Seven Segment Display driver was successfully designed and simulated using Verilog HDL. The design correctly decoded 4-bit BCD inputs into seven-segment outputs, enabling the display of digits 0–9. The simulation results verified the correct functionality of the display, with all inputs producing the expected segment patterns.
